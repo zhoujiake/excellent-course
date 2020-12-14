@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>藏医内科学精品资源共享课</title>
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/font-awesome.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-university">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myCollapse" aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="./home.html"><img src="./images/logo.jpg"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myCollapse">
+                <ul class="nav navbar-nav navbar-right head-navbar" id="nav">
+                    <li pageUrl="./details/home.html" class="nav-active">课程首页</li>
+					<li pageUrl="./details/courseIntroduction.html">课程介绍</li>
+                    <li pageUrl="./details/faculty.html">师资队伍</li>
+                    <li pageUrl="./details/basicCourseResourc.html">课程基本资源</li>
+                    <li pageUrl="./details/extendedResource.html">扩展资源</li>
+                    <li pageUrl="./details/teachingReform.html">教学改革</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container course-main course-detail">
+        <div class="content-box" id="content">
+		</div>
+    </div>
+    <footer class="footer">版权所有 © 北京工业大学 京公网安备：110402430086 COPYRIGHT © BEIJING UNIVERSITY OF TECHNOLOGY</footer>
+    <script src="./js/jquery-3.0.0.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+<script type="text/javascript">
+$(function(){
+	$("#content").load("./details/home.html");
+	$("#nav li").click(function(it) {
+		var pageUrl = it.target.getAttribute("pageUrl");
+		$("#content").load(pageUrl);
+		$("#nav li").siblings().removeClass('nav-active');  
+		$(this).addClass('nav-active');
+	});	
+})
+</script>
+</html>
