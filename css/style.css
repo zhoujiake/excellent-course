@@ -157,6 +157,7 @@ body {
 .opacity-black {
     /* background-color: rgba(0, 0, 0, 0.3); */
     height: 180px;
+	box-shadow: 0px 1px 10px 1px rgb(0,0,0,.3);
 }
 
 .tabs-vertical-env {
@@ -242,4 +243,17 @@ body {
 
 .media{
 	margin-top: 0px;
+}
+.box_border{
+	box-shadow: 0px 1px 10px 1px rgb(0,0,0,.3);
+}
+h3{
+	background-color:#05376A;
+	margin-bottom: 0px;
+	height: 40px;
+	box-shadow: 0px 1px 10px 1px rgb(0,0,0,.3);
+	color: #FFFFFF;
+	text-align:center ;
+	font-size: 20px;
+	
 }
