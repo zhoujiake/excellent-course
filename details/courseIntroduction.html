@@ -12,28 +12,8 @@
 		</ul>
 		<div class="tab-content col-md-10 col-xs-12">
 			<div role="tabpanel" class="tab-pane active" id="main">
-				<h2>《Power System(IBM i)企业级服务器应用开发》课程教学大纲</h2>
-				<hr>
-				<h4>一、 教学目标与要求</h4>
-				<p>本课程以IBM Power System作为教学与实践平台，面向本科三年级学生讲授企业级服务器的基本原理、系统管理及应用开发技术知识。课程内容由理论讲授部分及与其相配套的上机实践组成。</p>
-				<p>学生们学习通过课程学习后，应当理解在企业级中小型服务器基础知识以及在此平台上从事应用开发的常用技术和工具、服务器系统管理的基本概念及常用操作技能。为今后从事企业级软件系统开发、计算中心运维打下概念、知识与技能基础。</p>
-				<h4>二、 课程大纲</h4>
-				<p>第一章 IBM i概述</p>
-				<p>第二章 操作界面</p>
-				<p>第三章 对象与文件系统</p>
-				<p>第四章 消息处理</p>
-				<p>第五章 工作管理</p>
-				<p>第六章 系统管理基础</p>
-				<p>第七章 应用程序开发</p>
-				<p>第八章 数据库应用开发</p>
-				<p>第九章 IBM i 与SOA</p>
-				<h4>三、 教材与主要参考书</h4>
-				<p>[1]《IBM AS/400e技术与应用》，李师贤主编，浙江大学出版社2000。</p>
-				<p>[2](《罗彻斯特城堡:IBM eserver i系列技术揭秘》，索尔蒂斯著，IBM eServer i系列产品事业部译，机械工业出版社，2003年。</p>
-				<p>[3]《The Modern RPG IV Language》，Robert Cozzi，Mc Press 4th edition 2006.9</p>
-				<p>[4]《Free-Format RPG IV》，Jim Martin，Mc Press，2005.8。</p>
-				<p>[5]《AS/400：System，Utilities，Database and Programming》，George Lin，Gayla Stewart，IBM Books 1998.12。</p>
-				<p>[6]《Java and the AS/400》(Second Edition)，Daniel Darnell，29th Street Pr; 2 edition，2002.9。</p>
+				<!-- <a class="media" href="./resource/nylw.pdf" target="_blank"></a>  -->
+				<div class="row course-list"></div>
 			</div>
 			<div role="tabpanel" class="tab-pane" id="course">
 				<h2>课件下载</h2>
@@ -252,3 +232,83 @@
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+$(function() {
+    //自适应高度
+    function courseHeight() {
+        var height = $(window).height() - 180;
+        $('.course-main').css('min-height', height + 'px');
+        $('.tab-content').css('min-height', height - 150 + 'px');
+    }
+    courseHeight()
+    $(window).resize(function() {
+        courseHeight()
+    });
+
+    var data = {
+        "result": 0,
+        "message": "success",
+        "data": [{
+            "url": "./details/detail01.html",
+            "img": "http://szimg.mukewang.com/588170340001b26105400300-360-202.jpg",
+            "title": "计算机系统结构",
+            "subtitle": "国家级精品课程",
+            "view": 132
+        }, {
+            "url": "./details/detail01.html",
+            "img": "http://img.mukewang.com/589d25820001497206000338-240-135.jpg",
+            "title": "Software Testing",
+            "subtitle": "上海市精品课程",
+            "view": 431
+        }, {
+            "url": "./details/detail01.html",
+            "img": "http://img.mukewang.com/58807245000110e206000338-240-135.jpg",
+            "title": "计算机组成原理",
+            "subtitle": "上海市精品课程",
+            "view": 13
+        }, {
+            "url": "./details/detail01.html",
+            "img": "http://img.mukewang.com/5878a4180001d86f06000338-240-135.jpg",
+            "title": "计算机系统结构",
+            "subtitle": "上海市精品课程",
+            "view": 1432
+        }, {
+            "url": "./details/detail01.html",
+            "img": "http://img.mukewang.com/589a813c0001527a06000338-240-135.jpg",
+            "title": "大型计算机的高可用性和灾难恢复解决方案",
+            "subtitle": "教育部-IBM专业综合改革项目",
+            "view": 1651
+        }, {
+            "url": "./details/detail01.html",
+            "img": "http://img.mukewang.com/587db7af00016b7e06000338-240-135.jpg",
+            "title": "云计算安全",
+            "subtitle": "教育部-IBM专业综合改革项目",
+            "view": 7539
+        }, {
+            "url": "./details/detail01.html",
+            "img": "http://img.mukewang.com/587c69610001b37b06000338-240-135.jpg",
+            "title": "商务智能案例分析",
+            "subtitle": "教育部-IBM专业综合改革项目",
+            "view": 4528
+        }, {
+            "url": "./details/detail01.html",
+            "img": "http://img.mukewang.com/5885a1f5000113a506000338-240-135.jpg",
+            "title": "云计算核心技术",
+            "subtitle": "教育部-IBM专业综合改革项目",
+            "view": 872
+        }, {
+            "url": "./details/detail01.html",
+            "img": "http://img.mukewang.com/586f60d90001776a06000338-240-135.jpg",
+            "title": "Power System(IBM i)企业级服务器应用开发",
+            "subtitle": "教育部-IBM专业综合改革项目",
+            "view": 863
+        }]
+    }
+
+    //首页列表遍历显示
+    var list = data.data;
+    $.each(list, function(key, val) {
+        $('.course-list').append('<div class="col-sm-4 col-xs-6"><a href="' + val.url + '" target="_blank"><div class="course-card"><img alt="' + val.title + '" src="' + val.img + '"><div class="course-info"><p>' + val.title + '</p><span>' + val.subtitle + '</span></div><div class="course-state"><i class="fa fa-eye"> ' + val.view + '</i></div></div></a></div>')
+    })
+})
+</script>
