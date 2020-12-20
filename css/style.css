@@ -157,7 +157,7 @@ body {
 .opacity-black {
     /* background-color: rgba(0, 0, 0, 0.3); */
     height: 180px;
-	box-shadow: 0px 1px 10px 1px rgb(0,0,0,.3);
+	/* box-shadow: 0px 1px 10px 1px rgb(0,0,0,.3); */
 }
 
 .tabs-vertical-env {
@@ -245,17 +245,22 @@ body {
 	margin-top: 0px;
 }
 .box_border{
-	/* box-shadow: 0px 1px 10px 1px rgb(0,0,0,.3);
-	margin-top: 10px; */
+	/* height: 30px; */
+	/* background-color:#8B2323; */
+	color: #8B2323;
+	/* box-shadow: 0px 1px 10px 1px rgb(0,0,0,.3); */
+	margin-top: 20px;
+	text-align: center;
 	/* padding-left: 0px;
 	padding-right: 0px; */
 }
+
 h3{
-	background-color:#05376A;
+	background-color:#8B2323;
 	margin-bottom: 0px;
-	/* margin-top: 0px; */
+	margin-top: 0px;
 	height: 28px;
-	/* box-shadow: 0px 1px 10px 1px rgb(0,0,0,.3); */
+	box-shadow: 0px 1px 10px 1px rgb(0,0,0,.3);
 	color: #FFFFFF;
 	text-align:center ;
 	font-size: 18px;
@@ -271,4 +276,24 @@ h3{
 }
 .teacher_text{
 	margin-top: 15px;
+}
+.navigation{
+	background-image: url(../images/Navigation.png);
+	margin-left: 0px;
+	margin-right: 0px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* height: 180px; */
+	width: 100%;
+	margin-bottom: 20px;
+	height: 40px;
+	font-size: 23px;
+	/* color: #8B2323; */
+	box-shadow: 0px 1px 10px 1px rgb(0,0,0,.3);
+	border-style: outset;
+	border-color: #8B2323;
+	text-align: center;
+}
+.fontsize{
+	font-size:15px ;
 }
