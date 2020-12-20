@@ -12,7 +12,6 @@
 		</ul>
 		<div class="tab-content col-md-10 col-xs-12">
 			<div role="tabpanel" class="tab-pane active" id="main">
-				<!-- <a class="media" href="./resource/nylw.pdf" target="_blank"></a>  -->
 				<div class="row course-list"></div>
 			</div>
 			<div role="tabpanel" class="tab-pane" id="course">
@@ -232,8 +231,6 @@
 		</div>
 	</div>
 
-	<a id="modal-417596" href="#modal-container-417596" role="button" class="btn" data-toggle="modal">触发遮罩窗体</a>
-	
 	<div class="modal fade" id="modal-container-417596" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -244,20 +241,19 @@
 					</h4>
 				</div>
 				<div class="modal-body">
-					<a class="media" href="./resource/nylw.pdf" target="_blank"></a> 
+					<a class="media" href="./resource/nylw.pdf" target="_blank">123456</a>
 				</div>
 				<div class="modal-footer">
-					 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> <button type="button" class="btn btn-primary">保存</button>
+					 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> 
+					 <button type="button" class="btn btn-primary">保存</button>
 				</div>
 			</div>
-			
 		</div>
-		
 	</div>
 </div>
 <script type="text/javascript">
 $(function() {
-	 $('a.media').media({width:800, height:600});  
+	 // $('a.media').media({width:800, height:600});  
     //自适应高度
     function courseHeight() {
         var height = $(window).height() - 180;
@@ -334,7 +330,8 @@ $(function() {
     $.each(list, function(key, val) {
         $('.course-list').append(
 		'<div class="col-sm-4 col-xs-6">' +
-		'<a href="#modal-container-417596" target="_blank"><div class="course-card"><img alt="' + val.title + '" src="' + val.img + '">' + 
+		'<a data-toggle="modal" role="button" id="modal-417596" href="#modal-container-417596" target="_blank">' + 
+		'<div class="course-card"><img alt="' + val.title + '" src="' + val.img + '">' + 
 		'<div class="course-info"><p>' + val.title + '</p><span>' + val.subtitle + '</span></div>' + 
 		'<div class="course-state"><i class="fa fa-eye"> ' + val.view + '</i></div></div></a></div>')
     })
