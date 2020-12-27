@@ -1,31 +1,165 @@
-<div>
-	<div class="course-image">
-		<div class="opacity-black"></div>
-	</div>
-	<div class="tabs-vertical-env row">
-		<ul class="nav tabs-vertical col-sm-2 hidden-xs" role="tablist">
-			<li role="presentation" class="active"><a href="#people" aria-controls="people" role="tab" data-toggle="tab">课程负责人</a></li>
-			<li role="presentation"><a href="#structure" aria-controls="structure" role="tab" data-toggle="tab">主讲老师</a></li>
-			<li role="presentation"><a href="#member" aria-controls="member" role="tab" data-toggle="tab">教师队伍</a></li>
-		</ul>
-		<div class="tab-content col-md-10 col-xs-12">
-			<div role="tabpanel" class="tab-pane active" id="people">
-				<h2>课程负责人</h2>
-				<hr>
-				<h4>一个PDF文件</h4>
-			</div>
-			<div role="tabpanel" class="tab-pane" id="structure">
-				<h2>主讲老师</h2>
-				<hr>
-				<h4>一个PDF文件</h4>
-			</div>
-			<div role="tabpanel" class="tab-pane" id="member">
-					<h2>教师队伍</h2>
-					<hr>
-					<h4>多个PDF文件</h4>
-					
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>藏医内科学精品资源共享课</title>
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+	
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-university">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myCollapse" aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../index.html"><img src="../images/logo.jpg"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myCollapse">
+                <ul class="nav navbar-nav navbar-right head-navbar" id="nav">
+					<li><a href="../index.html">课程首页</a></li>
+					<li><a href="./courseIntroduction.html">课程介绍</a></li>
+					<li><a href="./faculty.html" class="nav-active">师资队伍</a></li>
+					<li><a href="./basicCourseResourc.html">课程基本资源</a></li>
+					<li><a href="./extendedResource.html">扩展资源</a></li>
+					<li><a href="./teachingReform.html">教学改革</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container course-main course-detail">
+       <div class="content-box" id="content">
+		  <div>
+		  	<div class="course-image">
+		  		<div class="opacity-black"></div>
+		  	</div>
+		  	<div class="tabs-vertical-env row">
+		  		<ul class="nav tabs-vertical col-sm-2 hidden-xs" role="tablist">
+		  			<li role="presentation" class="active"><a href="#people" aria-controls="people" role="tab" data-toggle="tab">课程负责人</a></li>
+		  			<li role="presentation"><a href="#structure" aria-controls="structure" role="tab" data-toggle="tab">主讲老师</a></li>
+		  			<li role="presentation"><a href="#member" aria-controls="member" role="tab" data-toggle="tab">教师队伍</a></li>
+		  		</ul>
+		  		<div class="tab-content col-md-10 col-xs-12">
+		  			<div role="tabpanel" class="tab-pane active" id="people">
+		  				<h2>课程负责人</h2>
+		  				<hr>
+		  				<h4>一个PDF文件</h4>
+		  			</div>
+		  			<div role="tabpanel" class="tab-pane" id="structure">
+		  				<h2>主讲老师</h2>
+		  				<hr>
+		  				<h4>一个PDF文件</h4>
+		  			</div>
+		  			<div role="tabpanel" class="tab-pane" id="member">
+		  					<h2>教师队伍</h2>
+		  					<hr>
+		  					<h4>多个PDF文件</h4>
+		  			</div>
+		  		</div>
+		  	</div>
+		  </div>
+	   </div>
+    </div>
+    <footer class="footer">版权所有 © 甘肃中医药大学藏医学院</footer>
+    <script src="../js/jquery-3.0.0.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+	<script src="../js/jquery.media.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+<script type="text/javascript">
+$(function() {
+	 // $('a.media').media({width:800, height:600});  
+    //自适应高度
+    function courseHeight() {
+        var height = $(window).height() - 180;
+        $('.course-main').css('min-height', height + 'px');
+        $('.tab-content').css('min-height', height - 150 + 'px');
+    }
+    courseHeight()
+    $(window).resize(function() {
+        courseHeight()
+    });
+
+    var data = {
+        "result": 0,
+        "message": "success",
+        "data": [{
+            "url": "./resource/case1.pdf",
+            "img": "http://szimg.mukewang.com/588170340001b26105400300-360-202.jpg",
+            "title": "计算机系统结构",
+            "subtitle": "国家级精品课程",
+            "view": 132
+        }, {
+            "url": "./details/detail01.html",
+            "img": "http://img.mukewang.com/589d25820001497206000338-240-135.jpg",
+            "title": "Software Testing",
+            "subtitle": "上海市精品课程",
+            "view": 431
+        }, {
+            "url": "./details/detail01.html",
+            "img": "http://img.mukewang.com/58807245000110e206000338-240-135.jpg",
+            "title": "计算机组成原理",
+            "subtitle": "上海市精品课程",
+            "view": 13
+        }, {
+            "url": "./details/detail01.html",
+            "img": "http://img.mukewang.com/5878a4180001d86f06000338-240-135.jpg",
+            "title": "计算机系统结构",
+            "subtitle": "上海市精品课程",
+            "view": 1432
+        }, {
+            "url": "./details/detail01.html",
+            "img": "http://img.mukewang.com/589a813c0001527a06000338-240-135.jpg",
+            "title": "大型计算机的高可用性和灾难恢复解决方案",
+            "subtitle": "教育部-IBM专业综合改革项目",
+            "view": 1651
+        }, {
+            "url": "./details/detail01.html",
+            "img": "http://img.mukewang.com/587db7af00016b7e06000338-240-135.jpg",
+            "title": "云计算安全",
+            "subtitle": "教育部-IBM专业综合改革项目",
+            "view": 7539
+        }, {
+            "url": "./details/detail01.html",
+            "img": "http://img.mukewang.com/587c69610001b37b06000338-240-135.jpg",
+            "title": "商务智能案例分析",
+            "subtitle": "教育部-IBM专业综合改革项目",
+            "view": 4528
+        }, {
+            "url": "./details/detail01.html",
+            "img": "http://img.mukewang.com/5885a1f5000113a506000338-240-135.jpg",
+            "title": "云计算核心技术",
+            "subtitle": "教育部-IBM专业综合改革项目",
+            "view": 872
+        }, {
+            "url": "./details/detail01.html",
+            "img": "http://img.mukewang.com/586f60d90001776a06000338-240-135.jpg",
+            "title": "Power System(IBM i)企业级服务器应用开发",
+            "subtitle": "教育部-IBM专业综合改革项目",
+            "view": 863
+        }]
+    }
+
+    //首页列表遍历显示
+    var list = data.data;
+    $.each(list, function(key, val) {
+        $('.course-list').append(
+		'<div class="col-sm-4 col-xs-6">' +
+		'<a role="button" id="modal-417596" href="./static/web/viewer.html?file=../../resource/case1.pdf">' + 
+		'<div class="course-card"><img alt="' + val.title + '" src="' + val.img + '">' + 
+		'<div class="course-info"><p>' + val.title + '</p><span>' + val.subtitle + '</span></div>' + 
+		'<div class="course-state"><i class="fa fa-eye"> ' + val.view + '</i></div></div></a></div>')
+    })
+})
+</script>
+</html>

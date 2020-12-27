@@ -47,12 +47,12 @@ body {
 }
 
 .navbar-university .navbar-collapse .navbar-nav>li:hover {
-    color: #1797dd;
+    color: #8b2323;
 	cursor : pointer;
 }
 
 .navbar-university .nav-active {
-    color: #1797b9!important;
+    color: #8b2323!important;
 }
 
 .logo-title {
@@ -64,7 +64,7 @@ body {
 
 .logo-title span {
     font-size: 24px;
-    color: #1797b9;
+    color: #8b2323;
     font-family: "Microsoft JhengHei";
 }
 
@@ -181,11 +181,11 @@ body {
 }
 
 .tabs-vertical-env .nav.tabs-vertical li.active {
-    background-color: #1797b9;
+    background-color: #aa2a2a;
 }
 
 .tabs-vertical-env .nav.tabs-vertical li.active a {
-    color: #f9f4f4;
+    color: #FFF;
 }
 
 .tabs-vertical-env .tabs-vertical.nav>li:focus,
