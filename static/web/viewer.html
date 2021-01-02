@@ -8,9 +8,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>藏医内科学精品资源共享课</title>
     <link rel="shortcut icon" href="/images/favicon.ico" />
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../css/font-awesome.min.css" rel="stylesheet">
-    <link href="../../css/style.css" rel="stylesheet">
 	<link rel="stylesheet" href="viewer.css">
 	<!-- This snippet is used in production (included from viewer.html) -->
 	<link rel="resource" type="application/l10n" href="locale/locale.properties">
@@ -20,25 +17,7 @@
   <script src="viewer.js"></script>  
 
   </head>
-
   <body tabindex="1" class="loadingInProgress">
-	<nav class="navbar navbar-default navbar-university">
-	  <div class="container">
-		  <div class="navbar-header">
-			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myCollapse" aria-expanded="false">
-				  <span class="icon-bar"></span>
-				  <span class="icon-bar"></span>
-				  <span class="icon-bar"></span>
-			  </button>
-			  <a href="../../index.html"><img src="../../images/logo.jpg"></a>
-		  </div>
-		  <div class="collapse navbar-collapse" id="myCollapse">
-			  <ul class="nav navbar-nav navbar-right head-navbar" id="nav">
-				  <li><a href="#" onclick="go()">返回</a></li>
-			  </ul>
-		  </div>
-	  </div>
-	</nav>
     <div class="container course-main course-detail">
        <div class="content-box" id="content">
 		   <div id="outerContainer">
@@ -105,15 +84,15 @@
 					 <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
 				   </button>
 		   
-				   <button id="secondaryOpenFile" class="secondaryToolbarButton openFile visibleLargeView" title="Open File" tabindex="52" data-l10n-id="open_file">
+				   <button id="secondaryOpenFile" style="display: none;"  class="secondaryToolbarButton openFile visibleLargeView" title="Open File" tabindex="52" data-l10n-id="open_file">
 					 <span data-l10n-id="open_file_label">Open</span>
 				   </button>
 		   
-				   <button id="secondaryPrint" class="secondaryToolbarButton print visibleMediumView" title="Print" tabindex="53" data-l10n-id="print">
+				   <button id="secondaryPrint" style="display: none;" class="secondaryToolbarButton print visibleMediumView" title="Print" tabindex="53" data-l10n-id="print">
 					 <span data-l10n-id="print_label">Print</span>
 				   </button>
 		   
-				   <button id="secondaryDownload" class="secondaryToolbarButton download visibleMediumView" title="Download" tabindex="54" data-l10n-id="download">
+				   <button id="secondaryDownload" style="display: none;" class="secondaryToolbarButton download visibleMediumView" title="Download" tabindex="54" data-l10n-id="download">
 					 <span data-l10n-id="download_label">Download</span>
 				   </button>
 		   
@@ -388,18 +367,15 @@
 		   <div id="printContainer"></div>
     	</div>
     </div> <!-- outerContainer -->
-	<footer class="footer">版权所有 © 甘肃中医药大学藏医学院</footer>
 	<script src="../../js/jquery-3.0.0.min.js"></script>
-	<script src="../../js/bootstrap.min.js"></script>
   </body>
   <script type="text/javascript">
   $(function(){
-	var height = $(window).height() - 180;
+	var height = $(window).height();
 	$('.content-box').css('height', height + 'px');
+	document.onselectstart = new Function("event.returnValue=false;");
+	document.oncontextmenu = function () {return false;}
   })
-  function go(){
-	  window.history.go(-1)
-  }
   </script>
 </html>
 

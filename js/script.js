@@ -1,4 +1,3 @@
-var navObj = {}// 被选中的当前菜单对象
 $(function() {
     //自适应高度
     function courseHeight() {

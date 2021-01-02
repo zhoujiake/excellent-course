@@ -10,7 +10,6 @@
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/font-awesome.min.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
-	
 </head>
 
 <body>
@@ -286,10 +285,18 @@
     <script src="./js/bootstrap.min.js"></script>
 	<script src="./js/jquery.media.js"></script>
     <script src="./js/script.js"></script>
+	<script src="./js/common.js"></script>
 </body>
 <script type="text/javascript">
-$(function(){
-
+$(function() {
+	
+	$.ajax({
+		  method: 'get',
+		  url: baseUrl + 'getPdfList?getPdfList=JSTD&classification=zjls&page=0',
+		  success: function(res) {
+			  console.log('res')
+		  }
+	});
 })
 </script>
 </html>

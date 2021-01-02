@@ -10,7 +10,6 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
-	
 </head>
 
 <body>
@@ -44,8 +43,11 @@
 		  	</div>
 		  	<div class="tabs-vertical-env row">
 		  		<ul class="nav tabs-vertical col-sm-2 hidden-xs" role="tablist">
-		  			<li role="presentation" class="active"><a href="#feature" aria-controls="feature" role="tab" data-toggle="tab">教学成果与奖励</a></li>
-		  			<li role="presentation" ><a href="#peapr" aria-controls="peapr" role="tab" data-toggle="tab">教学论文</a></li>
+		  			<li role="presentation" class="active">
+						<a href="#feature" aria-controls="feature" role="tab" data-toggle="tab">教学成果与奖励</a></li>
+		  			<li role="presentation" >
+						<a href="#peapr" aria-controls="peapr" role="tab" data-toggle="tab"
+						onclick="showPdf('jxlw','jxlw')">教学论文</a></li>
 		  		</ul>
 		  		<div class="tab-content col-md-10 col-xs-12">
 		  			<div role="tabpanel" class="tab-pane active" id="feature">
@@ -54,12 +56,27 @@
 		  				<p>多个图片展示</p>
 		  			</div>
 		  			<div role="tabpanel" class="tab-pane " id="peapr">
-		  				<h2>教学论文</h2>
-		  				<hr>
-		  				<p>多个PDF文件</p>
+		  				<div class="row course-list" id="jxlw">
+		  				</div>
 		  			</div>
 		  		</div>
 		  	</div>
+		  </div>
+		  <div class="modal fade" id="modal-container-417596" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog" style="width: 65%;">
+					<div class="modal-content">
+						<div class="modal-header">
+							 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h4 class="modal-title" id="myModalLabel">
+							</h4>
+						</div>
+						<div class="modal-body">
+							<iframe id="iframe" src="" width="100%" height="750px"></iframe>
+						</div>
+						<!-- <div class="modal-footer">
+						</div> -->
+					</div>
+				</div>
 		  </div>
 	   </div>
     </div>
@@ -68,91 +85,41 @@
     <script src="../js/bootstrap.min.js"></script>
 	<script src="../js/jquery.media.js"></script>
     <script src="../js/script.js"></script>
+	<script src="../js/common.js"></script>
 </body>
 <script type="text/javascript">
 $(function() {
-	 // $('a.media').media({width:800, height:600});  
-    //自适应高度
-    function courseHeight() {
-        var height = $(window).height() - 180;
-        $('.course-main').css('min-height', height + 'px');
-        $('.tab-content').css('min-height', height - 150 + 'px');
-    }
-    courseHeight()
-    $(window).resize(function() {
-        courseHeight()
-    });
 
-    var data = {
-        "result": 0,
-        "message": "success",
-        "data": [{
-            "url": "./resource/case1.pdf",
-            "img": "http://szimg.mukewang.com/588170340001b26105400300-360-202.jpg",
-            "title": "计算机系统结构",
-            "subtitle": "国家级精品课程",
-            "view": 132
-        }, {
-            "url": "./details/detail01.html",
-            "img": "http://img.mukewang.com/589d25820001497206000338-240-135.jpg",
-            "title": "Software Testing",
-            "subtitle": "上海市精品课程",
-            "view": 431
-        }, {
-            "url": "./details/detail01.html",
-            "img": "http://img.mukewang.com/58807245000110e206000338-240-135.jpg",
-            "title": "计算机组成原理",
-            "subtitle": "上海市精品课程",
-            "view": 13
-        }, {
-            "url": "./details/detail01.html",
-            "img": "http://img.mukewang.com/5878a4180001d86f06000338-240-135.jpg",
-            "title": "计算机系统结构",
-            "subtitle": "上海市精品课程",
-            "view": 1432
-        }, {
-            "url": "./details/detail01.html",
-            "img": "http://img.mukewang.com/589a813c0001527a06000338-240-135.jpg",
-            "title": "大型计算机的高可用性和灾难恢复解决方案",
-            "subtitle": "教育部-IBM专业综合改革项目",
-            "view": 1651
-        }, {
-            "url": "./details/detail01.html",
-            "img": "http://img.mukewang.com/587db7af00016b7e06000338-240-135.jpg",
-            "title": "云计算安全",
-            "subtitle": "教育部-IBM专业综合改革项目",
-            "view": 7539
-        }, {
-            "url": "./details/detail01.html",
-            "img": "http://img.mukewang.com/587c69610001b37b06000338-240-135.jpg",
-            "title": "商务智能案例分析",
-            "subtitle": "教育部-IBM专业综合改革项目",
-            "view": 4528
-        }, {
-            "url": "./details/detail01.html",
-            "img": "http://img.mukewang.com/5885a1f5000113a506000338-240-135.jpg",
-            "title": "云计算核心技术",
-            "subtitle": "教育部-IBM专业综合改革项目",
-            "view": 872
-        }, {
-            "url": "./details/detail01.html",
-            "img": "http://img.mukewang.com/586f60d90001776a06000338-240-135.jpg",
-            "title": "Power System(IBM i)企业级服务器应用开发",
-            "subtitle": "教育部-IBM专业综合改革项目",
-            "view": 863
-        }]
-    }
-
-    //首页列表遍历显示
-    var list = data.data;
-    $.each(list, function(key, val) {
-        $('.course-list').append(
-		'<div class="col-sm-4 col-xs-6">' +
-		'<a role="button" id="modal-417596" href="./static/web/viewer.html?file=../../resource/case1.pdf">' + 
-		'<div class="course-card"><img alt="' + val.title + '" src="' + val.img + '">' + 
-		'<div class="course-info"><p>' + val.title + '</p><span>' + val.subtitle + '</span></div>' + 
-		'<div class="course-state"><i class="fa fa-eye"> ' + val.view + '</i></div></div></a></div>')
-    })
 })
+function showPdf(boxName, category){
+	// 课程负责人数据获取
+	$.ajax({
+		  method: 'get',
+		  url: baseUrl + 'getPdfList?broadheading=JXGG&classification=' + category + '&page=0&limit=20',
+		  success: function(res) {
+			  if (res.data.length > 0) {
+				 //首页列表遍历显示
+				 var list = res.data;
+				 $('#' + boxName).html("")
+				 $.each(list, function(key, val) {
+				     $('#' + boxName).append(
+				 	'<div class="col-sm-4 col-xs-6">' +
+					'<a data-toggle="modal" role="button" id="modal-417596" href="#modal-container-417596"'+
+					' onclick="showPdfInDiload(\'' + val.Address + '\',\''+ val.FileName +'\')" target="_blank">' +
+				 	'<div class="course-card"><img alt="' + val.FileName + '" src="' + val.Icon + '">' + 
+				 	'<div class="course-info"><p>' + val.FileName + '</p><span>' + val.FileName + '</span></div>' + 
+				 	'<div class="course-state"><i class="fa fa-eye"> ' + val.ReadingVolume + '</i></div></div></a></div>')
+				 })
+			  }
+		  }
+	});
+}
+function showPdfInDiload(fileUrl, fileName) {
+	$('#myModalLabel').html(fileName)
+	$("#iframe")[0].src = ""
+	setTimeout(function() {
+		$("#iframe")[0].src = "../static/web/viewer.html?file=" + fileUrl;
+	},600);
+}
 </script>
 </html>

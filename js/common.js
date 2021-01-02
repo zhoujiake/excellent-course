@@ -1,0 +1,1 @@
+var baseUrl = "https://8fa3a805-2fda-403b-9930-540dc277e6c7.bspapp.com/http/"// 全局Url

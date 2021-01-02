@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html dir="ltr" mozdisallowselectionprint>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="google" content="notranslate">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>藏医内科学精品资源共享课</title>
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+
+  </head>
+
+  <body tabindex="1" class="loadingInProgress">
+	<nav class="navbar navbar-default navbar-university">
+	  <div class="container">
+		  <div class="navbar-header">
+			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myCollapse" aria-expanded="false">
+				  <span class="icon-bar"></span>
+				  <span class="icon-bar"></span>
+				  <span class="icon-bar"></span>
+			  </button>
+			  <a href="../../index.html"><img src="../../images/logo.jpg"></a>
+		  </div>
+		  <div class="collapse navbar-collapse" id="myCollapse">
+			  <ul class="nav navbar-nav navbar-right head-navbar" id="nav">
+				  <li><a href="#" onclick="go()">返回</a></li>
+			  </ul>
+		  </div>
+	  </div>
+	</nav>
+    <div class="container course-main course-detail">
+       <div class="content-box" id="content">
+		   <iframe class="iframeBox" src="" width="100%" height="750px"></iframe>
+    	</div>
+    </div> <!-- outerContainer -->
+	<footer class="footer">版权所有 © 甘肃中医药大学藏医学院</footer>
+	<script src="../../js/jquery-3.0.0.min.js"></script>
+	<script src="../../js/common.js"></script>
+	<script src="../../js/bootstrap.min.js"></script>
+  </body>
+  <script type="text/javascript">
+  $(function() {
+	var height = $(window).height() - 160;
+	$('.content-box').css('height', height + 'px');
+	$('.iframeBox').css('height', height + 'px');
+	document.onselectstart = new Function("event.returnValue=false;");
+	document.oncontextmenu = function () {return false;}
+	jQuery(document).bind("keyup keydown", function(e){
+		if(e.ctrlKey && e.keyCode == 80){
+		  return true;
+		}
+	});
+	//调用
+	var Request = new Object();
+	Request = GetRequest();
+	var fileId;
+	fileId = Request['id'];
+	debugger
+	$.ajax({
+		  method: 'get',
+		  url: baseUrl + 'getPDFById?id=' + Number(fileId),
+		  success: function(res) {
+			  debugger
+			if (res.data.length > 0) {
+				var list = res.data;
+				$.each(list, function(key, val) {
+					$(".iframeBox")[0].src = "./viewer.html?file=" + val.Address;
+				})
+			}
+		  }
+	});
+  })
+  function go(){
+	  window.history.go(-1)
+  }
+  function GetRequest() {
+	  var url = location.search; //获取url中"?"符后的字串
+	  var theRequest = new Object();
+	  if (url.indexOf("?") != -1) {
+		  var str = url.substr(1);
+		  strs = str.split("&");
+		  for(var i = 0; i < strs.length; i ++) {
+			  theRequest[strs[i].split("=")[0]]=decodeURI(strs[i].split("=")[1]);
+		  }
+	  }
+	  return theRequest;
+  } 
+  </script>
+</html>
+
