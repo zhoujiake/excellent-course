@@ -20,8 +20,8 @@ body {
 }
 
 .navbar-university img {
-    height: 50px;
-    margin-top: 10px;
+        height: 201px;
+        width: 100%;
 }
 
 .navbar-university .navbar-collapse {
@@ -33,7 +33,8 @@ body {
 
 .navbar-university .navbar-nav {
     text-align: center;
-    background: #fff
+    background: #f55757
+	
 }
 
 .navbar-university .navbar-toggle {
@@ -245,14 +246,10 @@ body {
 	margin-top: 0px;
 }
 .box_border{
-	/* height: 30px; */
-	/* background-color:#8B2323; */
-	color: #8B2323;
-	/* box-shadow: 0px 1px 10px 1px rgb(0,0,0,.3); */
-	margin-top: 20px;
-	text-align: center;
-	/* padding-left: 0px;
-	padding-right: 0px; */
+	    height: 40px;
+	    width: 100%;
+	    float: right!important;
+	    margin-right: -15px;
 }
 
 h3{
@@ -263,9 +260,10 @@ h3{
 	box-shadow: 0px 1px 10px 1px rgb(0,0,0,.3);
 	color: #FFFFFF;
 	text-align:center ;
-	font-size: 18px;
+	font-size: 16px;
 	padding-top: 4px;
 }
+
 .icon {
    height: 65px;
    width: 65px;
@@ -278,22 +276,26 @@ h3{
 	margin-top: 15px;
 }
 .navigation{
-	background-image: url(../images/Navigation.png);
+	/* background-image: url(../images/Navigation.png); */
 	margin-left: 0px;
 	margin-right: 0px;
 	background-repeat: no-repeat;
 	background-size: cover;
 	/* height: 180px; */
 	width: 100%;
-	margin-bottom: 20px;
-	height: 40px;
-	font-size: 23px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	height: 20px;
+	font-size: 18px;
 	/* color: #8B2323; */
-	box-shadow: 0px 1px 10px 1px rgb(0,0,0,.3);
-	border-style: outset;
-	border-color: #8B2323;
+	/* box-shadow: 0px 1px 10px 1px rgb(0,0,0,.3); */
+	/* border-style: outset; */
+	/* border-color: #8B2323; */
 	text-align: center;
 }
 .fontsize{
 	font-size:15px ;
+}
+.link{
+	text-align: center;
 }
