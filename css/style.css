@@ -94,8 +94,9 @@ body {
 }
 
 .course-card img {
-    height: 120px;
-    width: 100%
+	margin: 8px;
+    height: 90%;
+    width: 94%
 }
 
 .course-info {

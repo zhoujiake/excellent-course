@@ -16,7 +16,8 @@
     <nav class="navbar navbar-default navbar-university">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myCollapse" aria-expanded="false">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+				data-target="#myCollapse" aria-expanded="false">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -51,9 +52,8 @@
 		  		</ul>
 		  		<div class="tab-content col-md-10 col-xs-12">
 		  			<div role="tabpanel" class="tab-pane active" id="feature">
-		  				<h2>教学成果与奖励</h2>
-		  				<hr>
-		  				<p>多个图片展示</p>
+		  				<div class="row course-list" id="jxcg">
+		  				</div>
 		  			</div>
 		  			<div role="tabpanel" class="tab-pane " id="peapr">
 		  				<div class="row course-list" id="jxlw">
@@ -78,6 +78,16 @@
 					</div>
 				</div>
 		  </div>
+		  <div class="modal fade" id="modal-container-417590" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog" style="width: 80%;">
+					<div class="modal-content" style="border: 0px;border-radius: 0px;">
+						<div class="modal-body" id="modal-body" style="padding: 0px;">
+						</div>
+						<!-- <div class="modal-footer">
+						</div> -->
+					</div>
+				</div>
+		  </div>
 	   </div>
     </div>
     <footer class="footer">版权所有 © 甘肃中医药大学藏医学院</footer>
@@ -89,7 +99,27 @@
 </body>
 <script type="text/javascript">
 $(function() {
-
+// 课程负责人数据获取
+	$.ajax({
+		  method: 'get',
+		  url: baseUrl + 'getImages?page=0&limit=20',
+		  success: function(res) {
+			  if (res.data.length > 0) {
+				 //首页列表遍历显示
+				 var list = res.data;
+				 list = list.sort(compare("Sort",0))
+				 $('#jxcg').html("")
+				 $.each(list, function(key, val) {
+				     $('#jxcg').append(
+				 	'<div class="col-sm-4 col-xs-6">' +
+					'<a data-toggle="modal" role="button" id="modal-417590" href="#modal-container-417590"'+
+					' onclick="showImg(\'' + val.Url + '\',\''+ val.PhotoContent +'\')" target="_blank">' +
+				 	'<div class="course-card"><img alt="' + val.PhotoContent + '" src="' + val.Url + '" >' + 
+				 	'</div></a></div>')
+				 })
+			  }
+		  }
+	});
 })
 function showPdf(boxName, category){
 	// 课程负责人数据获取
@@ -120,6 +150,41 @@ function showPdfInDiload(fileUrl, fileName) {
 	setTimeout(function() {
 		$("#iframe")[0].src = "../static/web/viewer.html?file=" + fileUrl;
 	},600);
+}
+
+function showImg(fileUrl, fileName) {
+	$('#myModalLabel').html(fileName)
+	$('#modal-body').html('<img alt="' + fileName + '" src="' + fileUrl + '" style="width:100%; ">')
+}
+
+//针对对象数据进行排序propertyName 要排序的属性名，order 1为正序0为倒序
+function compare(propertyName, order) {
+    return function (object1, object2) { 
+        var value1 = object1[propertyName]; 
+        var value2 = object2[propertyName]; 
+        if(order==0){
+            if (value2 < value1) { 
+                return -1; 
+            } 
+            else if (value2 > value1) { 
+                return 1; 
+            } 
+            else { 
+                return 0; 
+            } 
+        }if(order==1){
+            if (value2 > value1) { 
+                return -1; 
+            } 
+            else if (value2 < value1) { 
+                return 1; 
+            } 
+            else { 
+                return 0; 
+            } 
+        }
+        
+    }
 }
 </script>
 </html>
