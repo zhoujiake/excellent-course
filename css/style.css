@@ -8,6 +8,9 @@ body {
 	margin-left: 20px;
 	line-height: 50px;
 }
+.head-navbar>li>a {
+    color : #FFF;
+}
 
 .navbar-university {
     height: 70px;
@@ -44,7 +47,7 @@ body {
 
 .navbar-university .navbar-toggle:hover,
 .navbar-university .navbar-toggle:focus {
-    background-color: #fff;
+    background-color: #e57373;
 }
 
 .navbar-university .navbar-collapse .navbar-nav>li:hover {
@@ -54,6 +57,11 @@ body {
 
 .navbar-university .nav-active {
     color: #8b2323!important;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: #e53935;
 }
 
 .logo-title {
@@ -71,11 +79,11 @@ body {
 
 .course-main {
     margin-top: 100px;
-    margin-bottom: 30px;
 }
 
 .course-detail {
     margin-top: 70px;
+	/* box-shadow: 0px 1px 10px 1px rgb(0,0,0,.3); */
 }
 
 .course-card {
@@ -254,11 +262,11 @@ body {
 }
 
 h3{
-	background-color:#8B2323;
+	background-color:#e53935;
 	margin-bottom: 0px;
 	margin-top: 0px;
 	height: 28px;
-	box-shadow: 0px 1px 10px 1px rgb(0,0,0,.3);
+	/* box-shadow: 0px 1px 10px 1px rgb(0,0,0,.3); */
 	color: #FFFFFF;
 	text-align:center ;
 	font-size: 16px;
@@ -296,7 +304,31 @@ h3{
 }
 .fontsize{
 	font-size:15px ;
+	margin-top: 10px;
 }
 .link{
 	text-align: center;
+}
+.navbars{
+	box-shadow: 0px 1px 10px 1px rgb(0,0,0,.3);
+	padding: 0px!important; 
+	background-color: #b71c1c; 
+	color: #FFFFFF;
+}
+.sction-box{
+	padding: 10px 4px;
+}
+.glyphicon-chevron-left:before {
+    content: "";
+}
+
+.glyphicon-chevron-right:before {
+    content: "";
+}
+
+.slide-box{
+	height: 50rem; 
+	overflow: hidden; 
+	margin-top: 10px; 
+	margin-bottom: 10px;
 }

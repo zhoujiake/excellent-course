@@ -12,13 +12,12 @@
     <link href="./css/style.css" rel="stylesheet">
 </head>
 
-<body>
-		
+<body>		
 	<div class="container">
 		<div class="nav-img">
 			<img src="./images/course-detail.jpg" width="100%">
 		</div>
-		<div class="collapse navbar-collapse" id="myCollapse">
+		<div class="collapse navbar-collapse navbars" id="myCollapse">
 			<ul class="nav navbar-nav navbar-right head-navbar" style="width: 100%;" id="nav">
 				<li><a href="./index.html" class="nav-active">课程首页</a></li>
 				<li><a href="./details/courseIntroduction.html">课程介绍</a></li>
@@ -31,12 +30,12 @@
 	</div>
     <div class="container course-main course-detail" style="margin-top: 0px;">
        <div class="content-box" id="content">
-		   	<div class="row clearfix">
-		   		<div class="col-md-4 column fontsize">
+		   	<div class="row clearfix fontsize" >
+		   		<div class="col-md-4 column">
 		   			<h3>
 		   				课&nbsp;&nbsp;程&nbsp;&nbsp;简&nbsp;&nbsp;介
 		   			</h3>
-		   			<p>
+		   			<p class="sction-box">
 		   				藏医内科学是藏医临床学科组的专业课程之一，是藏医学本科的必修课，是继藏医基础医学课之后的一门临床医学的专业学科。是后期教学中重要的临床专业课，在培养学生的临床思维方式和实践技能方面起着至关重要作用。高等藏医院校开设藏医内科学之目的是培养的藏医专业本科生在全面掌握藏医药理论和技能的基础上，能系统地掌握藏医内科学的知识。内科学的专业培养目标是强化学生临床思维能力，掌握内科常见病、多发病的诊断和防治，熟悉内科急诊的处理原则及方法，以利于学生在今后的藏医药临床、教学及科研工作中更好地发挥藏医优势，培养基础扎实、知识面广、具有临床思维能力和诊疗基本诊疗技能的复合型人才。通过课堂讲授和临床见习、实习，系统掌握藏医内科学的基本理论；、基本知识和基本技能；重点在于培养学生的基本临床思维和实际动手能力，促进藏医药学及藏西医结合医学的发展。
 		   			</p>
 		   			<p>
@@ -47,7 +46,7 @@
 		   			<h3>
 		   				视&nbsp;&nbsp;频&nbsp;&nbsp;专&nbsp;&nbsp;栏
 		   			</h3>
-		   			<div class="media">
+		   			<div class="media" style="margin-top: 10px;">
 		   				<a href="#" class="pull-left"><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-tibetan-medicine/20989ce0-13ab-11eb-8ff1-d5dcf8779628.jpg"
 		   					 class="media-object" alt='' /></a>
 		   				<div class="media-body">
@@ -111,44 +110,12 @@
 		   			<h3>
 		   				成&nbsp;&nbsp;果&nbsp;&nbsp;图&nbsp;&nbsp;片
 		   			</h3>
-		   			<div class="carousel slide" id="carousel-744193">
-		   				<ol class="carousel-indicators">
-		   					<li class="active" data-slide-to="0" data-target="#carousel-744193">
-		   					</li>
-		   					<li data-slide-to="1" data-target="#carousel-744193">
-		   					</li>
-		   					<li data-slide-to="2" data-target="#carousel-744193">
-		   					</li>
+		   			<div class="carousel slide slide-box" id="carousel-744193">
+		   				<ol class="carousel-indicators"  id="indicators-box">
 		   				</ol>
-		   				<div class="carousel-inner">
-		   					<div class="item active">
-		   						<img alt="" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-aliyun-s0loanutibdi25aa49/80386740-4202-11eb-bf0a-894cbc80c40a.jpg" />
-		   						<div class="carousel-caption">
-		   							<h4>
-		   							</h4>
-		   							<p>
-		   							</p>
-		   						</div>
-		   					</div>
-		   					<div class="item">
-		   						<img alt="" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-aliyun-s0loanutibdi25aa49/54939ce0-4202-11eb-bd01-97bc1429a9ff.jpg" />
-		   						<div class="carousel-caption">
-		   							<h4>
-		   							</h4>
-		   							<p>
-		   							</p>
-		   						</div>
-		   					</div>
-		   					<div class="item">
-		   						<img alt="" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-aliyun-s0loanutibdi25aa49/532d7d30-4202-11eb-bc56-c9cea619f663.jpg" />
-		   						<div class="carousel-caption">
-		   							<h4>
-		   							</h4>
-		   							<p>
-		   							</p>
-		   						</div>
-		   					</div>
-		   				</div> <a class="left carousel-control" href="#carousel-744193" data-slide="prev">
+		   				<div class="carousel-inner" id="inner-box">
+		   				</div>
+						<a class="left carousel-control" href="#carousel-744193" data-slide="prev">
 		   					<span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-744193"
 		   				 data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 		   			</div>
@@ -252,6 +219,35 @@ $(function() {
 		  url: baseUrl + 'getPdfList?getPdfList=JSTD&classification=zjls&page=0',
 		  success: function(res) {
 			  console.log('res')
+		  }
+	});
+	
+	// 课程负责人数据获取
+	$.ajax({
+		  method: 'get',
+		  url: baseUrl + 'getImages?page=0&limit=20',
+		  success: function(res) {
+			  if (res.data.length > 0) {
+				 //首页列表遍历显示
+				 var list = res.data;
+				 list = list.sort(compare("Sort",0)).slice(0, 6)
+				 $('#inner-box').html("")
+				 $.each(list, function(key, val) {
+					if (key == 0) {
+						$('#indicators-box').append('<li class="active" data-slide-to="' + key + '" data-target="#carousel-744193"></li>')
+						$('#inner-box').append(
+						'<div class="item active">' +
+						'<img alt="" src="'+ val.Url +'" style="width:100%; height: 50rem;"/>' + 
+						'<div class="carousel-caption"><h4></h4><p></p></div></div>')
+					} else {
+						$('#indicators-box').append('<li data-slide-to="' + key + '" data-target="#carousel-744193"></li>')
+						$('#inner-box').append(
+						'<div class="item">' +
+						'<img alt="" src="'+ val.Url +'" style="width:100%; height: 50rem;"/>' + 
+						'<div class="carousel-caption"><h4></h4><p></p></div></div>')
+					}
+				 })
+			  }
 		  }
 	});
 })
