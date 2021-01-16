@@ -51,12 +51,12 @@ body {
 }
 
 .navbar-university .navbar-collapse .navbar-nav>li:hover {
-    color: #8b2323;
+    color: #b71c1c;
 	cursor : pointer;
 }
 
 .navbar-university .nav-active {
-    color: #8b2323!important;
+    color: #b71c1c!important;
 }
 
 .nav>li>a:focus, .nav>li>a:hover {
@@ -73,7 +73,7 @@ body {
 
 .logo-title span {
     font-size: 24px;
-    color: #8b2323;
+    color: #b71c1c;
     font-family: "Microsoft JhengHei";
 }
 
@@ -191,11 +191,15 @@ body {
 }
 
 .tabs-vertical-env .nav.tabs-vertical li.active {
-    background-color: #aa2a2a;
+    background-color: #b71c1c;
 }
 
 .tabs-vertical-env .nav.tabs-vertical li.active a {
     color: #FFF;
+}
+
+.tabs-vertical-env .nav.tabs-vertical li a {
+    color: #535353;
 }
 
 .tabs-vertical-env .tabs-vertical.nav>li:focus,
@@ -228,14 +232,18 @@ body {
 }
 
 .footer {
-    height: 50px;
+    height: 100px;
     text-align: center;
     line-height: 50px;
-    background: #333;
-    color: #ccc;
+    background: #b71c1c;
+    color: #FFF;
     font-size: 12px;
     position: absolute;
     width: 100%
+}
+
+.link a {
+	color: #FFFFFF;
 }
 
 @media (max-width: 768px) {
@@ -266,7 +274,6 @@ h3{
 	margin-bottom: 0px;
 	margin-top: 0px;
 	height: 28px;
-	/* box-shadow: 0px 1px 10px 1px rgb(0,0,0,.3); */
 	color: #FFFFFF;
 	text-align:center ;
 	font-size: 16px;
@@ -296,10 +303,6 @@ h3{
 	margin-top: 10px;
 	height: 20px;
 	font-size: 18px;
-	/* color: #8B2323; */
-	/* box-shadow: 0px 1px 10px 1px rgb(0,0,0,.3); */
-	/* border-style: outset; */
-	/* border-color: #8B2323; */
 	text-align: center;
 }
 .fontsize{
@@ -327,8 +330,34 @@ h3{
 }
 
 .slide-box{
-	height: 50rem; 
+	height: 40rem; 
 	overflow: hidden; 
 	margin-top: 10px; 
 	margin-bottom: 10px;
+}
+
+.articleList_title {
+    width: 336px;
+    height: 38px;
+    border-bottom: 2px solid #f3f3f3;
+    line-height: 38px;
+}
+.articleList_title .more {
+    float: right;
+    margin-right: 4px;
+}
+.articleList_title h2 {
+    float: left;
+    width: 85px;
+	height: 38px;
+	line-height: 38px;
+    font-weight: normal;
+    border-bottom: 2px solid #b71c1c;
+    color: #b71c1c;
+    font-size: 18px;
+	margin: 0px 0px;
+}
+.articleList_title span a {
+    color: #555555;
+    font-size: 13px;
 }
